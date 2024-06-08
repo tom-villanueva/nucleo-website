@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import dummy2 from "../assets/dummy2.png";
+---
+
+<section class="min-h-screen bg-lima px-20">
+  <div class="flex flex-row items-end">
+    <div>
+      <h3 class="text-7xl text-rosa md:text-8xl lg:text-9xl xl:text-[17rem]">
+        hablemos
+      </h3>
+      <div class="pb-12">
+        <p class="text-6xl">escribinos a</p>
+        <p class="text-6xl">agencia.nucleo23@gmail.com</p>
+      </div>
+
+      <div class="pb-12">
+        <p class="text-6xl text-rosa">peganos un call al</p>
+        <p class="text-6xl">11 3833 0934</p>
+      </div>
+
+      <div>
+        <p class="text-6xl font-bold text-violeta">chusmea en</p>
+        <p class="text-6xl">@nucleoo.agencia</p>
+      </div>
+    </div>
+    <div>
+      <Image
+        src={dummy2}
+        class="h-auto"
+        alt="manifiesto nucleo"
+        loading={"eager"}
+      />
+    </div>
+  </div>
+</section>

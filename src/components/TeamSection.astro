@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import abru from "../assets/team/abru.png";
+import male from "../assets/team/male.png";
+import martu from "../assets/team/martu.png";
+import santi from "../assets/team/santi.png";
+import sofi from "../assets/team/sofi.png";
+import TeamCard from "./TeamCard.astro";
+---
+
+<section class="mx-auto min-h-screen bg-cyan py-16">
+  <h2 class="pb-6 pl-6 text-7xl text-blue-500 md:text-8xl lg:text-9xl">
+    Dream team
+  </h2>
+  <div class="flex flex-wrap items-center justify-center gap-36">
+    <TeamCard image={male} nombre="Male" especialidad="3D" />
+    <TeamCard image={sofi} nombre="Sofi  " especialidad="3D" />
+    <TeamCard image={abru} nombre="Abru" especialidad="3D" />
+    <TeamCard image={santi} nombre="Santi" especialidad="3D" />
+    <TeamCard image={sofi} nombre="Martu" especialidad="3D" />
+  </div>
+</section>
