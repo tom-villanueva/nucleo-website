@@ -1,0 +1,116 @@
+---
+
+---
+
+<section class="min-h-screen w-full overflow-x-hidden">
+  <div class="bg-rosa">
+    <div class="horizontal-scrolling-items-right">
+      <div class="horizontal-scrolling-items__item">
+        motions motions motions motions motions motions motions motions motions
+        motions motions motions &nbsp
+      </div>
+      <div class="horizontal-scrolling-items__item">
+        motions motions motions motions motions motions motions motions motions
+        motions motions motions &nbsp
+      </div>
+    </div>
+  </div>
+
+  <div class="horizontal-scrolling-items">
+    <div class="horizontal-scrolling-items__item">
+      3d 3d 3d 3d 3d 3d 3d 3d 3d 3d 3d 3d &nbsp
+    </div>
+    <div class="horizontal-scrolling-items__item">
+      3d 3d 3d 3d 3d 3d 3d 3d 3d 3d 3d 3d &nbsp
+    </div>
+  </div>
+
+  <div class="bg-rosa">
+    <div class="horizontal-scrolling-items-right">
+      <div class="horizontal-scrolling-items__item">
+        ilustración ilustración ilustración ilustración ilustración ilustración
+        ilustración ilustración ilustración &nbsp
+      </div>
+      <div class="horizontal-scrolling-items__item">
+        ilustración ilustración ilustración ilustración ilustración ilustración
+        ilustración ilustración ilustración &nbsp
+      </div>
+    </div>
+  </div>
+
+  <div class="horizontal-scrolling-items">
+    <div class="horizontal-scrolling-items__item">
+      web web web web web web web web web web web web &nbsp
+    </div>
+    <div class="horizontal-scrolling-items__item">
+      web web web web web web web web web web web web &nbsp
+    </div>
+  </div>
+
+  <div class="bg-rosa">
+    <div class="horizontal-scrolling-items-right">
+      <div class="horizontal-scrolling-items__item">
+        jueguitos jueguitos jueguitos jueguitos jueguitos jueguitos jueguitos
+        jueguitos jueguitos jueguitos &nbsp
+      </div>
+      <div class="horizontal-scrolling-items__item">
+        jueguitos jueguitos jueguitos jueguitos jueguitos jueguitos jueguitos
+        jueguitos jueguitos jueguitos &nbsp
+      </div>
+    </div>
+  </div>
+
+  <div class="horizontal-scrolling-items">
+    <div class="horizontal-scrolling-items__item">
+      avon avon avon avon avon avon avon avon avon avon &nbsp
+    </div>
+    <div class="horizontal-scrolling-items__item">
+      avon avon avon avon avon avon avon avon avon avon &nbsp
+    </div>
+  </div>
+</section>
+
+<style>
+  .horizontal-scrolling-items {
+    display: flex;
+    font-size: 15rem;
+    width: 2600px;
+    animation-name: infiniteScroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .horizontal-scrolling-items-right {
+    display: flex;
+    font-size: 15rem;
+    width: 2600px;
+    animation-name: infiniteScrollRight;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .horizontal-scrolling-items__item {
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  @keyframes infiniteScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes infiniteScrollRight {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+</style>

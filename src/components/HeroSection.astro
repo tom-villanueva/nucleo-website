@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import dummy from "../assets/dummy.png";
+---
+
+<section class="flex h-screen w-full items-center justify-center bg-cyan pt-20">
+  <Image
+    src={dummy}
+    class="h-auto drop-shadow-sm"
+    width={800}
+    alt="manifiesto nucleo"
+    loading={"eager"}
+  />
+</section>
