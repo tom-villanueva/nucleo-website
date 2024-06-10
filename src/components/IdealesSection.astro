@@ -2,20 +2,110 @@
 
 ---
 
-<section class="flex min-h-screen flex-col justify-center gap-y-10 bg-rosa">
-  <p
-    class="px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
+<div>
+  <section
+    id="ideales"
+    class="flex min-h-screen flex-col justify-center gap-y-10 bg-rosa"
   >
-    conectar
-  </p>
-  <p
-    class="px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
-  >
-    preguntar
-  </p>
-  <p
-    class="px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
-  >
-    crear
-  </p>
-</section>
+    <p
+      data-aos="fade-down"
+      data-aos-offset="300"
+      class="pointer-events-none cursor-default px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
+    >
+      conectar
+    </p>
+    <p
+      data-aos="fade-down"
+      data-aos-offset="300"
+      class="pointer-events-none cursor-default px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
+    >
+      preguntar
+    </p>
+    <p
+      data-aos="fade-down"
+      data-aos-offset="300"
+      class="pointer-events-none cursor-default px-6 text-4xl text-lima md:text-8xl lg:text-9xl xl:text-[15rem] 2xl:text-[17rem]"
+    >
+      crear
+    </p>
+  </section>
+  <div id="move-div" class="pointer-events-none hidden"></div>
+</div>
+
+<style>
+  #move-div {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    background-color: #ff5d5d;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+  }
+</style>
+
+<script>
+  import AOS from "aos";
+  import "aos/dist/aos.css";
+  AOS.init();
+
+  const div = document.getElementById("move-div");
+  const section = document.getElementById("ideales");
+
+  const isTouchDevice =
+    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+  let isMoving = false;
+
+  const move = (e: any) => {
+    if (isMoving) return;
+    isMoving = true;
+
+    requestAnimationFrame(() => {
+      const x = !isTouchDevice ? e.pageX : e.touches[0].pageX;
+      const y = !isTouchDevice ? e.pageY : e.touches[0].pageY;
+
+      const divWidth = div!.offsetWidth;
+      const divHeight = div!.offsetHeight;
+
+      const newLeft = x - divWidth / 2;
+      const newTop = y - divHeight / 2;
+
+      div!.style.left = newLeft + "px";
+      div!.style.top = newTop + "px";
+
+      isMoving = false;
+    });
+  };
+
+  const isMouseInsideSection = (event: any) => {
+    const rect = section!.getBoundingClientRect();
+    return (
+      event.clientX >= rect.left &&
+      event.clientX <= rect.right &&
+      event.clientY >= rect.top &&
+      event.clientY <= rect.bottom
+    );
+  };
+
+  const handleMouseMove = (e: any) => {
+    if (isMouseInsideSection(e)) {
+      move(e);
+    }
+  };
+
+  section!.addEventListener("mouseenter", () => {
+    div!.classList.remove("hidden");
+    div!.classList.add("block");
+    document.addEventListener("mousemove", handleMouseMove);
+  });
+
+  section!.addEventListener("mouseleave", (e) => {
+    div!.classList.remove("block");
+    div!.classList.add("hidden");
+    document.removeEventListener("mousemove", handleMouseMove);
+  });
+
+  section!.addEventListener("touchmove", (e) => {
+    move(e);
+  });
+</script>

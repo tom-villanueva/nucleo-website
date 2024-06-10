@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import uala from "../../assets/cositas/motion/uala.png";
+import vfx from "../../assets/cositas/motion/vfx.png";
+import videoclip from "../../assets/cositas/motion/videoclip.png";
+import wuru from "../../assets/cositas/motion/wuru.png";
+import clubDeLaMilanesa from "../../assets/cositas/motion/club-de-la-milanesa.png";
+import CositasCard from "../../components/cositas/CositasCard.astro";
+---
+
+<Layout title="Nucleo | Motions">
+  <main class="flex flex-col">
+    <section
+      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-4 bg-lima pt-48 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <CositasCard title="Club de la milanesa" image={clubDeLaMilanesa} />
+      <CositasCard title="Wuru" image={wuru} />
+      <CositasCard title="Uala" image={uala} />
+      <CositasCard title="Videoclip" image={videoclip} />
+      <CositasCard title="VFX" image={vfx} />
+    </section>
+  </main>
+</Layout>

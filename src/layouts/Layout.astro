@@ -5,21 +5,6 @@ interface Props {
   title: string;
 }
 
-const navItems = [
-  {
-    title: "cositas",
-    url: `/cositas`,
-  },
-  {
-    title: "dream team",
-    url: `/about`,
-  },
-  {
-    title: "hablanos",
-    url: `/contact`,
-  },
-];
-
 const { title } = Astro.props;
 ---
 
@@ -35,7 +20,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <div class="flex flex-col">
-      <Header navItems={navItems} />
+      <Header />
       <slot />
     </div>
   </body>

@@ -1,22 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
-
-type NavItem = {
-  title: string;
-  url: string;
-};
-
-interface Props {
-  navItems: NavItem[];
-}
-
-const { navItems } = Astro.props;
 ---
 
 <header
   id="page-header"
-  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4"
+  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-6 py-4 md:px-10 lg:px-14"
 >
   <a class="hover:!text-default flex items-center gap-3" href="/">
     <h1 class="sr-only">Nucleo</h1>
@@ -33,15 +22,27 @@ const { navItems } = Astro.props;
     <div class="flex items-center gap-6">
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
-          {
-            navItems.map(({ title, url }) => (
-              <li>
-                <a class="text-lg" href={url}>
-                  {title}
-                </a>
-              </li>
-            ))
-          }
+          <li>
+            <a
+              class="text-xl font-bold text-red-500 lg:text-4xl"
+              href="#cositas"
+            >
+              cositas
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-xl font-bold text-blue-500 lg:text-4xl"
+              href="#dream-team"
+            >
+              dream team
+            </a>
+          </li>
+          <li>
+            <a class="text-xl font-bold text-rosa lg:text-4xl" href="#hablemos">
+              hablemos
+            </a>
+          </li>
         </ul>
       </nav>
       <button
@@ -95,15 +96,30 @@ const { navItems } = Astro.props;
             </div>
             <nav>
               <ul class="flex flex-col">
-                {
-                  navItems.map(({ title, url }) => (
-                    <li>
-                      <a class="block py-4 text-center text-xl" href={url}>
-                        {title}
-                      </a>
-                    </li>
-                  ))
-                }
+                <li>
+                  <a
+                    class="block py-4 text-center text-xl text-red-500"
+                    href="#cositas"
+                  >
+                    cositas
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block py-4 text-center text-xl text-blue-500"
+                    href="#dream-team"
+                  >
+                    dream team
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="block py-4 text-center text-xl text-rosa"
+                    href="#hablemos"
+                  >
+                    hablemos
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
