@@ -25,7 +25,9 @@ const dialogId = `dialog-${kebabCase(title)}`;
 ---
 
 <a data-micromodal-trigger={dialogId}>
-  <article class="flex cursor-pointer flex-col items-center justify-center">
+  <article
+    class="flex w-60 cursor-pointer flex-col items-center justify-center md:w-64 lg:w-80 xl:w-96 2xl:w-full"
+  >
     <Image
       src={image}
       class="image-shadow h-auto"
@@ -66,7 +68,7 @@ const dialogId = `dialog-${kebabCase(title)}`;
 
 <style>
   .image-shadow {
-    --shadowColor: #d564ef;
+    --shadowColor: #f72586;
     border-radius: 2rem;
     box-shadow: -1rem -1rem 0 var(--shadowColor);
   }

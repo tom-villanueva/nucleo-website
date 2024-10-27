@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["RocgroteskMedium", ...defaultTheme.fontFamily.sans],
+        sans: ["RocgroteskBold", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         violeta: "#7C00DD",
@@ -14,6 +14,11 @@ export default {
         cyan: "#5CE1E6",
         lima: "#C1FF72",
         azul: "#2586F7",
+        rojo: "#F92122",
+        naranja: "#FF5C01",
+        amarillo: "#FBDF24",
+        fuxia: "#F72586",
+        rosita: "#ED749F",
       },
     },
   },

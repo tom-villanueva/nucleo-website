@@ -3,7 +3,9 @@ import { Image } from "astro:assets";
 import dummy from "../assets/dummy.png";
 ---
 
-<section class="flex h-screen w-full items-center justify-center bg-cyan pt-20">
+<section
+  class="bg-image flex h-screen w-full items-center justify-center bg-cyan pt-20"
+>
   <Image
     src={dummy}
     class="h-auto drop-shadow-sm"
@@ -12,3 +14,9 @@ import dummy from "../assets/dummy.png";
     loading={"eager"}
   />
 </section>
+
+<style>
+  .bg-image {
+    background-image: url(/images/bg-team-section.png);
+  }
+</style>
