@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ecomerce from "../../assets/cositas/web/ecomerce.png";
+import altermundi from "../../assets/cositas/web/altermundi.png";
+import havanna from "../../assets/cositas/web/havanna.png";
+
+import CositasCard from "../../components/cositas/CositasCard.astro";
+import CositaCardWeb from "../../components/cositas/CositaCardWeb.astro";
+---
+
+<Layout title="Nucleo | Web">
+  <main class="flex flex-col">
+    <section
+      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-8 bg-lima p-12 pt-48 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <CositaCardWeb
+        title="e-commerce"
+        image={ecomerce}
+        webSrc="https://cafecito-ecommerce.netlify.app/"
+      />
+      <CositaCardWeb
+        title="Havanna"
+        image={havanna}
+        webSrc="https://havanna.netlify.app/"
+      />
+      <CositaCardWeb
+        title="Altermundi"
+        image={altermundi}
+        webSrc="https://altermundi.net/"
+      />
+    </section>
+  </main>
+</Layout>

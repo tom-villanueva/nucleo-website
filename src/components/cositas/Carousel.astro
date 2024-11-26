@@ -1,0 +1,330 @@
+---
+import CositasCard from "./CositaCard3d.astro";
+import camara from "../../assets/cositas/3d/card/camara.png";
+import telescopio from "../../assets/cositas/3d/telescopio.png";
+import walle from "../../assets/cositas/3d/card/walle.png";
+import robot from "../../assets/cositas/3d/card/robot.png";
+import rifle from "../../assets/cositas/3d/card/rifle.png";
+
+const cards = [
+  {
+    title: "Wall·e",
+    image: walle,
+    videoSrc: "/videos/motion/bimo.mp4",
+  },
+  {
+    title: "Camara",
+    image: camara,
+    videoSrc: "/videos/motion/bimo.mp4",
+  },
+  {
+    title: "Robot",
+    image: robot,
+    videoSrc: "/videos/3d/robot.mp4",
+  },
+  {
+    title: "Telescopio",
+    image: telescopio,
+    videoSrc: "/videos/3d/telescopio.mp4",
+  },
+  {
+    title: "Rifle",
+    image: rifle,
+    videoSrc: "/videos/3d/rifle.mp4",
+  },
+];
+---
+
+<div class="swiper-body">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {
+        cards.map((card, idx) => {
+          const dialogId = `dialog-${card.title.toLowerCase()}`;
+          return (
+            <div class="swiper-slide" data-dialog-id={dialogId}>
+              <CositasCard {...card} />
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+
+{
+  cards.map((card) => (
+    <div
+      id={`dialog-${card.title.toLowerCase()}`}
+      aria-hidden="true"
+      class="modal micromodal-slide"
+    >
+      <div tabindex="-1" data-micromodal-close class="modal__overlay">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={`dialog-${card.title.toLowerCase()}-title`}
+          class="modal__container"
+        >
+          <header class="modal__header text-3xl">
+            <h2
+              id={`dialog-${card.title.toLowerCase()}-title`}
+              class="modal__title"
+            >
+              {card.title}
+            </h2>
+            <button
+              aria-label="Close modal"
+              data-micromodal-close
+              class="modal__close"
+            />
+          </header>
+          <div
+            id={`dialog-${card.title.toLowerCase()}-content`}
+            class="modal__content"
+          >
+            <video controls width="800">
+              <source src={card.videoSrc} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))
+}
+
+<style>
+  .swiper-body {
+    /* position: relative; */
+    /* height: 600px; */
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    opacity: 0.7;
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
+  .modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal__container {
+    /* background-color: #fff; */
+    padding: 30px;
+    max-width: 80vw;
+    max-height: 100vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .modal__close {
+    background: transparent;
+    color: #ffffff;
+    border: 0;
+  }
+
+  .modal__header .modal__close:before {
+    content: "\2715";
+  }
+
+  .modal__content {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal__btn {
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.25rem;
+    border-style: none;
+    border-width: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    text-transform: none;
+    overflow: visible;
+    line-height: 1.15;
+    margin: 0;
+    will-change: transform;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: -webkit-transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    transition:
+      transform 0.25s ease-out,
+      -webkit-transform 0.25s ease-out;
+  }
+
+  .modal__btn:focus,
+  .modal__btn:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .modal__btn-primary {
+    background-color: #00449e;
+    color: #fff;
+  }
+
+  /**************************\
+  Demo Animation Style
+\**************************/
+  @keyframes mmfadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes mmfadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes mmslideIn {
+    from {
+      transform: translateY(15%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mmslideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10%);
+    }
+  }
+
+  .micromodal-slide {
+    display: none;
+  }
+
+  .micromodal-slide.is-open {
+    display: block;
+  }
+
+  .micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .micromodal-slide[aria-hidden="true"] .modal__container {
+    animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .micromodal-slide .modal__container,
+  .micromodal-slide .modal__overlay {
+    will-change: transform;
+  }
+</style>
+
+<script>
+  import MicroModal from "micromodal";
+  import Swiper from "swiper";
+  import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+  import "swiper/css/effect-coverflow";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper", {
+      modules: [Navigation, Pagination, EffectCoverflow],
+      slidesPerView: 3,
+      centeredSlides: true, // Centers the active slide
+      loop: true,
+      pagination: {
+        clickable: true,
+      },
+      effect: "coverflow",
+      coverflowEffect: {
+        slideShadows: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+
+  // Initialize modals
+  MicroModal.init({
+    awaitCloseAnimation: true,
+  });
+
+  // Open modal on card click
+  document.querySelectorAll(".swiper-slide").forEach((slide) => {
+    const dialogId = slide.getAttribute("data-dialog-id");
+    slide.addEventListener("click", () => {
+      if (dialogId) {
+        MicroModal.show(dialogId);
+      }
+    });
+  });
+</script>

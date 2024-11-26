@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import avon from "../../assets/cositas/avon/avon2.png";
+
+import CositasCard from "../../components/cositas/CositasCard.astro";
+---
+
+<Layout title="Nucleo | Ilustración">
+  <main class="flex flex-col">
+    <section
+      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-8 bg-lima p-12 pt-48 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <CositasCard title="Avon" image={avon} videoSrc="/videos/avon/avon.mp4" />
+    </section>
+  </main>
+</Layout>

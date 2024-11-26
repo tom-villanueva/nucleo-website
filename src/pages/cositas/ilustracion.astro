@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import noventa from "../../assets/cositas/ilustracion/90s.png";
+import bighero from "../../assets/cositas/ilustracion/bighero.png";
+import branding from "../../assets/cositas/ilustracion/branding.png";
+import challanger from "../../assets/cositas/ilustracion/challanger.png";
+import national from "../../assets/cositas/ilustracion/national.png";
+import nike from "../../assets/cositas/ilustracion/nike.png";
+import ronpe from "../../assets/cositas/ilustracion/ronpe.png";
+import CositasCard from "../../components/cositas/CositasCard.astro";
+---
+
+<Layout title="Nucleo | Ilustración">
+  <main class="flex flex-col">
+    <section
+      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-8 bg-lima p-12 pt-48 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <CositasCard title="90s" image={noventa} videoSrc="" />
+      <CositasCard title="Big Hero" image={bighero} videoSrc="" />
+      <CositasCard title="Branding" image={branding} videoSrc="" />
+      <CositasCard title="Challanger" image={challanger} videoSrc="" />
+      <CositasCard title="National" image={national} videoSrc="" />
+      <CositasCard title="Nike" image={nike} videoSrc="" />
+      <CositasCard title="Ronpe" image={ronpe} videoSrc="" />
+    </section>
+  </main>
+</Layout>

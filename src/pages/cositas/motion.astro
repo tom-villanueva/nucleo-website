@@ -1,23 +1,37 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import uala from "../../assets/cositas/motion/uala.png";
-import vfx from "../../assets/cositas/motion/vfx.png";
-import videoclip from "../../assets/cositas/motion/videoclip.png";
-import wuru from "../../assets/cositas/motion/wuru.png";
-import clubDeLaMilanesa from "../../assets/cositas/motion/club-de-la-milanesa.png";
+import bimo from "../../assets/cositas/motion/bimo.png";
+import club from "../../assets/cositas/motion/club.png";
+import nike from "../../assets/cositas/motion/nike.png";
+import tuenti from "../../assets/cositas/motion/tuenti.png";
 import CositasCard from "../../components/cositas/CositasCard.astro";
 ---
 
 <Layout title="Nucleo | Motions">
   <main class="flex flex-col">
     <section
-      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-4 bg-lima pt-48 md:grid-cols-2 lg:grid-cols-3"
+      class="grid min-h-screen w-full grid-cols-1 items-center justify-items-center gap-8 bg-lima p-12 pt-48 md:grid-cols-2 lg:grid-cols-3"
     >
-      <CositasCard title="Club de la milanesa" image={clubDeLaMilanesa} />
-      <CositasCard title="Wuru" image={wuru} />
-      <CositasCard title="Uala" image={uala} />
-      <CositasCard title="Videoclip" image={videoclip} />
-      <CositasCard title="VFX" image={vfx} />
+      <CositasCard
+        title="Club de la milanesa"
+        image={club}
+        videoSrc="/videos/motion/club.mp4"
+      />
+      <CositasCard
+        title="Bimo"
+        image={bimo}
+        videoSrc="/videos/motion/bimo.mp4"
+      />
+      <CositasCard
+        title="Nike"
+        image={nike}
+        videoSrc="/videos/motion/nike.mp4"
+      />
+      <CositasCard
+        title="Tuenti"
+        image={tuenti}
+        videoSrc="/videos/motion/tuenti.mp4"
+      />
     </section>
   </main>
 </Layout>

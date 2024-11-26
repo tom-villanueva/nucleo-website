@@ -1,18 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import dummy from "../assets/dummy.png";
+
 ---
 
 <section
   class="bg-image flex h-screen w-full items-center justify-center bg-cyan pt-20"
 >
-  <Image
-    src={dummy}
-    class="h-auto drop-shadow-sm"
-    width={800}
-    alt="manifiesto nucleo"
-    loading={"eager"}
-  />
+  <video controls width="800">
+    <source src="/videos/manifiesto.mp4" type="video/mp4" />
+  </video>
 </section>
 
 <style>

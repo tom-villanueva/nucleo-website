@@ -1,34 +1,30 @@
 ---
 import { Image } from "astro:assets";
-import dummy from "../assets/dummy.png";
-import dummy2 from "../assets/dummy2.png";
+import deco1 from "../assets/deco1.png";
+import deco2 from "../assets/deco2.png";
 ---
 
 <section
   class="flex min-h-screen flex-col items-center justify-center bg-violeta"
 >
   <h2
-    class="text-amarillo self-start justify-self-start pl-6 text-7xl md:text-8xl lg:text-9xl xl:text-[17rem]"
+    class="self-start justify-self-start pl-6 text-7xl font-bold text-amarillo md:text-8xl lg:text-9xl xl:text-[17rem]"
   >
     reel
   </h2>
-  <div class="relative w-1/2 p-10">
+  <div class="relative p-10">
+    <video controls width="800">
+      <source src="/videos/reel.mp4" type="video/mp4" />
+    </video>
     <Image
-      src={dummy}
-      class="h-auto drop-shadow-sm"
-      alt="manifiesto nucleo"
-      width={800}
-      loading={"eager"}
-    />
-    <Image
-      src={dummy2}
-      class="bg-amarillo absolute -right-4 -top-4 h-48 w-48"
+      src={deco1}
+      class="absolute -right-4 -top-4 h-48 w-48"
       alt="manifiesto nucleo"
       loading={"eager"}
     />
     <Image
-      src={dummy2}
-      class="bg-amarillo absolute -bottom-4 -left-4 h-48 w-48"
+      src={deco2}
+      class="absolute -bottom-4 -left-4 h-48 w-48"
       alt="manifiesto nucleo"
       loading={"eager"}
     />

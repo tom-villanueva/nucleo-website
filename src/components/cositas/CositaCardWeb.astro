@@ -1,0 +1,33 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  title: string;
+  image: ImageMetadata;
+  webSrc: string;
+}
+
+const { title, image, webSrc } = Astro.props;
+---
+
+<a href={webSrc} target="_blank">
+  <article
+    class="flex w-60 cursor-pointer flex-col items-center justify-center md:w-64 lg:w-80 xl:w-96 2xl:w-full"
+  >
+    <Image
+      src={image}
+      class="image-shadow h-auto"
+      alt="manifiesto nucleo"
+      loading={"eager"}
+    />
+    <p class="text-2xl font-bold text-rosa">{title}</p>
+  </article>
+</a>
+
+<style>
+  .image-shadow {
+    --shadowColor: #f72586;
+    border-radius: 2rem;
+    box-shadow: -1rem -1rem 0 var(--shadowColor);
+  }
+</style>

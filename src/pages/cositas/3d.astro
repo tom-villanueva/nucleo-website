@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/cositas/Carousel.astro";
+---
+
+<Layout title="Nucleo | 3D">
+  <main class="flex flex-col">
+    <section class="min-h-screen w-full bg-lima p-12 pt-48">
+      <!-- <Carousel cositas={cards} /> -->
+      <Carousel />
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  .modal.hidden {
+    display: none;
+  }
+
+  .modal {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide-active article img {
+    transform: scale(1);
+  }
+</style>

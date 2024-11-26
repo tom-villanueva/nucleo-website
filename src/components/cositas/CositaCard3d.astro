@@ -1,0 +1,25 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  title: string;
+  image: ImageMetadata;
+  videoSrc: string;
+}
+
+const { title, image, videoSrc } = Astro.props;
+---
+
+<!-- <a data-micromodal-trigger={dialogId}> -->
+<article class="flex cursor-pointer flex-col items-center justify-center">
+  <Image
+    src={image}
+    class="block h-96 w-full object-cover"
+    alt="manifiesto nucleo"
+    loading={"eager"}
+  />
+  <p class="text-2xl font-bold text-rosa">{title}</p>
+</article>
+<!-- </a> -->
+
+<style></style>
