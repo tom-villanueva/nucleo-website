@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["RocgroteskBold", ...defaultTheme.fontFamily.sans],
+        sans: ["roc-grotesk", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         violeta: "#7C00DD",
